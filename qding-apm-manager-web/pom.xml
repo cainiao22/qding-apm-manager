@@ -17,28 +17,45 @@
         <qding-apm-client-nonwebflux>0.0.3</qding-apm-client-nonwebflux>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>debug</id>
+            <properties>
+                <profiles.active>debug</profiles.active>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profiles.active>dev</profiles.active>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>qa</id>
+            <properties>
+                <profiles.active>qa</profiles.active>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profiles.active>prod</profiles.active>
+            </properties>
+
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>com.qding.apm</groupId>
-            <artifactId>qding-apm-manager-core</artifactId>
+            <artifactId>qding-apm-manager-business</artifactId>
             <version>0.0.1</version>
-        </dependency>
-
-        <!--spring-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -47,25 +64,25 @@
             <version>${qding-apm-client-nonwebflux}</version>
         </dependency>
 
-        <!--dubbo-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.101tec</groupId>
-            <artifactId>zkclient</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
+        <filters>
+            <filter>src/main/env/env-${profiles.active}.properties</filter>
+        </filters>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -75,11 +92,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${mavn-compeiler-plugin.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>

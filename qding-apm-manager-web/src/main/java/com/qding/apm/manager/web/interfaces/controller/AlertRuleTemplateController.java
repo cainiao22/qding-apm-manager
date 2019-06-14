@@ -2,8 +2,8 @@ package com.qding.apm.manager.web.interfaces.controller;
 
 import com.qding.apm.manager.core.application.dto.AlertRuleTemplateDto;
 import com.qding.apm.manager.core.application.service.AlertRuleTemplateService;
-import com.qding.apm.manager.core.infrastructure.base.validation.CreateValidation;
-import com.qding.apm.manager.core.infrastructure.base.validation.UpdateValidation;
+import com.qding.platform.framework.base.validation.CreateValidation;
+import com.qding.platform.framework.base.validation.UpdateValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;

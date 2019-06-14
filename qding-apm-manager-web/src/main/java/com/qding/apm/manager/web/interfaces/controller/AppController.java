@@ -5,7 +5,7 @@ import com.qding.apm.manager.core.application.dto.AppModelDto;
 import com.qding.apm.manager.core.application.dto.CreateAppDto;
 import com.qding.apm.manager.core.application.dto.UpdateAppDto;
 import com.qding.apm.manager.core.application.service.AppService;
-import com.qding.apm.manager.core.infrastructure.base.validation.CreateValidation;
+import com.qding.platform.framework.base.validation.CreateValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;

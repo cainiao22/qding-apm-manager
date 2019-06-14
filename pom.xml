@@ -7,13 +7,13 @@
     <modules>
         <module>qding-apm-manager-web</module>
         <module>qding-apm-manager-watch</module>
-        <module>qding-apm-manager-core</module>
+        <module>qding-apm-manager-business</module>
     </modules>
 
     <parent>
-        <groupId>com.qding.platform</groupId>
-        <artifactId>qding-basic-component</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>com.qding.platform.framework</groupId>
+        <artifactId>qding-basic-dependencies</artifactId>
+        <version>0.0.1</version>
     </parent>
 
     <groupId>com.qding.apm</groupId>

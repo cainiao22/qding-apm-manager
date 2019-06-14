@@ -1,7 +1,7 @@
 package com.qding.apm.manager.web.interfaces.error;
 
-import com.qding.apm.manager.core.infrastructure.base.exception.BizException;
-import com.qding.apm.manager.core.infrastructure.base.exception.SystemException;
+import com.qding.platform.framework.base.exception.BizException;
+import com.qding.platform.framework.base.exception.SystemException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,8 +1,8 @@
 package com.qding.apm.manager.web.interfaces.aspect;
 
 import com.qding.apm.aop.ApmRecordMethodAspect;
-import com.qding.apm.manager.core.infrastructure.base.context.OperContext;
-import com.qding.apm.manager.core.infrastructure.base.vo.OperInfoVo;
+import com.qding.platform.framework.base.context.OperContext;
+import com.qding.platform.framework.base.vo.OperInfoVo;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
