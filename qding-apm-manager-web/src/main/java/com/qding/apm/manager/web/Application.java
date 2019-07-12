@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ import java.util.List;
 @ComponentScan({"com.qding.apm"})
 @ServletComponentScan("com.qding.apm")
 @MapperScan("com.qding.apm.manager.core.infrastructure.persistence.dao")
+@EnableFeignClients
 public class Application implements ApplicationRunner {
     @Autowired
     private ApmService apmService;
